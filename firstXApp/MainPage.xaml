@@ -37,7 +37,7 @@
                 >
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <StackLayout>
+                    <StackLayout Padding="10,10">
                         <Frame>
                             <Label Text="{Binding .}"></Label>
                         </Frame>

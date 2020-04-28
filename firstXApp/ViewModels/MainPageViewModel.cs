@@ -20,9 +20,15 @@ namespace firstXApp.ViewModels
                 NoteText = string.Empty;
             });
 
-            SelectionChangedCommand = new Command(() =>
+            SelectionChangedCommand = new Command(async () =>
             {
                 var detailVM = new DetailPageViewModel(SelectedNote);
+                var detailPage = new DetailPage
+                {
+                    BindingContext = detailVM
+                };
+
+                await Application.Current.MainPage.Navigation.PushAsync(detailPage);
             });
         }
 
@@ -42,7 +48,7 @@ namespace firstXApp.ViewModels
         string selectedNote;
         public string SelectedNote
         {
-            get => noteText;
+            get => selectedNote;
             set
             {
                 selectedNote = value;
