@@ -10,7 +10,12 @@ namespace firstXApp
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new MainPage());
+            MainPage = new NavigationPage(new MainPage())
+            {
+                BarBackgroundColor=Color.CadetBlue,
+                BarTextColor =Color.White,
+                Title="Notes"
+            };
         }
 
         protected override void OnStart()
